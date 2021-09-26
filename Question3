@@ -1,0 +1,26 @@
+import java.util.*;
+public class Question3 {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner (System.in);
+		System.out.println("Enter Gender");
+		String Gender = in.next();
+		System.out.println("Enter Age");
+		int Age = in.nextInt();
+		if(Gender == "male") {
+			if (Age >=25) {
+				System.out.println("You are eligible to marry");
+			}else {
+				System.out.println("You are not eligible to marry");
+			}
+		}else {
+			if (Age >=21) {
+				System.out.println("You are eligible to marry");
+			}else
+				System.out.println("You are not eligible to marry");
+		
+		}
+
+	}
+
+}
