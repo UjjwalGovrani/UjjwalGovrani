@@ -1,0 +1,30 @@
+import java.util.*;
+public class MaxOfThree {
+	public static int maxi(int a,int b, int c) {
+		int res;
+		if(a>b) {
+			if(a>c) {
+				res=a;
+			}else {
+				res=c;
+			}
+		}else {
+			if(b>c) {
+				res=b;
+			}else {
+				res=c;
+			}
+		}
+		return res;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter 3 numbers to find maximum value : ");
+		int num1=sc.nextInt();
+		int num2=sc.nextInt();
+		int num3=sc.nextInt();
+		System.out.println("The maximum number is: "+maxi(num1,num2,num3));
+
+	}
+
+}
