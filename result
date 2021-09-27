@@ -1,0 +1,63 @@
+import java.util.*;
+public class result {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter student name: ");
+		String name=sc.next();
+		System.out.println("Enter student grade: ");
+		String grade=sc.next();
+		System.out.println("Enter student roll no: ");
+		int rollno=sc.nextInt();
+		
+		System.out.println("Enter student marks of all 6 subjects: ");
+		
+		int arr[]=new int[6];
+		for(int i=0;i<6;i++) {
+			arr[i]=sc.nextInt();
+		}
+		int totalmarks,lowestmarks,highestmarks;
+		
+		lowestmarks=arr[0];
+		highestmarks=arr[0];
+		totalmarks=arr[0];
+		for(int i=1;i<6;i++) {
+			if(arr[i]<lowestmarks) {
+				lowestmarks=arr[i];
+			}
+			if(arr[i]>highestmarks) {
+				highestmarks=arr[i];
+			}
+			totalmarks+=arr[i];
+		}
+		double averagemarks= (double) (totalmarks/6);
+		
+		String res[]=new String[6] ;
+		for(int i=0;i<6;i++) {
+			if(arr[i]>=40) {
+				res[i]="Pass";
+			}else {
+				res[i]="Fail";
+				
+			}
+		}
+		System.out.println("Student Roll no: "+ rollno);
+		System.out.println("Student Name: "+ name);
+		System.out.println("Subject wise marks: ");
+		for(int i=0;i<6;i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		System.out.println("Total Marks: "+totalmarks);
+		System.out.println("Average Marks: "+averagemarks);
+		System.out.println("Result: ");
+		for(int i=0;i<6;i++) {
+			System.out.print(res[i]+" ");
+		}
+		System.out.println();
+		
+		
+
+	}
+
+}
