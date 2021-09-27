@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Question2 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int size;
+		System.out.println("Enter the size of array: ");
+		size=sc.nextInt();
+		int arr[]=new int[size];
+		System.out.println("Enter the values in the array:");
+		for(int i=0;i<size;i++) {
+			arr[i]=sc.nextInt();
+		}
+		int minimum=arr[0];
+		for(int i=1;i<size;i++) {
+			if(arr[i]<minimum) {
+				minimum=arr[i];
+			}
+		}
+		System.out.println("The minimum value in the array is: "+minimum);
+
+	}
+
+}
