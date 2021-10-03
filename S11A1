@@ -1,0 +1,22 @@
+abstract class Bank{
+	public abstract void openAccount();
+	public abstract void closeAccount(); 
+}
+class SBI extends Bank {
+	public void openAccount() {
+		System.out.println("Open a new Account");
+	}
+	public void closeAccount() {
+		System.out.println("Close a Acccount");
+	}
+}
+
+public class Test {
+
+	public static void main(String[] args) {
+	SBI e = new SBI();
+	e.openAccount();
+	e.closeAccount();
+	}
+
+}
