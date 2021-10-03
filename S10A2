@@ -1,0 +1,25 @@
+interface CalC {
+	int a = 2;
+	int b = 4;
+	public static void sum() {
+		System.out.println("The sum of Numbers is: " +(a+b));
+	}
+	public static void sub() {
+		System.out.println("The subtraction of Numbers is: " +(a-b));
+	}
+	public static void mul() {
+		System.out.println("The multiplication of Numbers is: " +(a*b));
+	}
+	public static void div() {
+		System.out.println("The division of Numbers is: " +(a/b));
+	}
+}
+public class S10A2 implements CalC {
+
+	public static void main(String[] args) {
+	CalC.sum();
+	CalC.sub();
+	CalC.mul();
+	CalC.div();
+	}
+}
