@@ -1,0 +1,28 @@
+class Employee {
+	public void getEmployeeName() {
+		System.out.println("Ujjwal");
+	}
+	public void getEmployeeId() {
+		System.out.println("101");
+	}
+}
+class PermanentEmployee extends Employee {
+	public void salaryOnMonthly() {
+		System.out.println("60000");
+	}
+}
+class ContractEmployee extends Employee {
+	public void salaryOnHourly() {
+		System.out.println("1000");
+	}
+}
+public class S9A3 {
+
+	public static void main(String[] args) {
+		PermanentEmployee e = new PermanentEmployee();
+		e.salaryOnMonthly();
+		ContractEmployee f = new ContractEmployee();
+		f.salaryOnHourly();
+	}
+
+}
