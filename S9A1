@@ -1,0 +1,25 @@
+class Car {
+	public void move() {
+		System.out.println("Car is Moving...");
+	}
+	public void brake() {
+		System.out.println("Brake is applied...");
+	}
+}
+
+class Audi extends Car {
+	public void autoPilot() {
+		System.out.println("Car is in auto pilot mode...");
+	}public void autoGear() {
+		System.out.println("Car is in auto gear mode...");
+	}
+}
+public class Test {
+  public static void main (String [] args) {
+	  Audi obj = new Audi ();
+	  obj.move();
+	  obj.brake();
+	  obj.autoPilot();
+	  obj.autoGear();
+  }
+}
