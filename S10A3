@@ -1,0 +1,31 @@
+interface MyCalc{
+	public abstract void sum(int a, int b);
+	public abstract void sub(int a, int b);
+	public abstract void mul(int a, int b);
+	public abstract void div(int a, int b);
+}
+class ABC implements MyCalc {
+	public void sum(int a, int b) {
+		System.out.println("The Sum is: " + (a+b));	
+	}
+	public void sub(int a, int b) {
+		System.out.println("The subtraction is: "+ (a-b));
+	}
+	public void mul(int a,int b) {
+		System.out.println("The multiplication is: "+ (a*b));
+	}
+	public void div(int a, int b) {
+		System.out.println("The division is: " +(a/b));
+	}
+}
+public class S10A3 {
+
+	public static void main(String[] args) {
+		ABC e = new ABC();
+		e.sum(5, 0);
+		e.sub(14, 10);
+		e.mul(50, 0);
+		e.div(5, 1);
+	}
+
+}
