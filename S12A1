@@ -1,0 +1,55 @@
+import java.io.*;
+import java.util.*;
+class AttendanceShortageException extends Exception{
+	public AttendanceShortageException() {
+		super ();
+		System.out.println("AttendanceShortageException");
+	}
+	public AttendanceShortageException(String msg) {
+		super(msg);
+	}
+}
+
+class GPAException extends Exception{
+	public GPAException() {
+		super ();
+		System.out.println("GPAException");
+	}
+	public GPAException(String msg) {
+		super(msg);
+	}
+}
+
+public class S12A1 {
+	static void checker(int att) throws AttendanceShortageException{
+		if(att<75) {
+			throw new AttendanceShortageException("Bad");
+		}else {
+			System.out.println("Good");
+		}
+	}
+	static void GPAchecker(int CGPA) throws GPAException{
+		if(CGPA<7) {
+			throw new GPAException("Bad");
+		}else {
+			System.out.println("Good");
+		}
+	}
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		try {
+			System.out.println("Please Enter Attendance");
+			int a = in.nextInt();
+			checker(a);
+		}catch (AttendanceShortageException ex) {
+			System.out.println("Exception: "+ex);
+		}
+		try {
+			System.out.println("Please Enter CGPA");
+			int a = in.nextInt();
+			GPAchecker(a);
+		}catch (GPAException ex) {
+			System.out.println("Exception: "+ex);
+	}
+}		
+}
