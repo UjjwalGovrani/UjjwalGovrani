@@ -1,0 +1,36 @@
+class TV {
+	public void sound() {
+		System.out.println("The sound is high...");
+	}
+	public void picture () {
+		System.out.println("The picture quality is good");
+	}
+}
+class ThreeDTV extends TV {
+	public void threeD() {
+		System.out.println("Supports 3D");
+	}
+	public void dolbyAudio() {
+		System.out.println("Supports Dolby Audio");
+	}
+}
+class SmartTV extends ThreeDTV {
+	public void internet () {
+		System.out.println("Supports Internet Connectivity");
+	}
+	public void fullHD () {
+		System.out.println("Supports FULLHD");
+	}
+}
+public class S9A2 {
+
+	public static void main(String[] args) {
+		SmartTV e = new SmartTV ();
+		e.sound();
+		e.picture();
+		e.threeD();
+		e.dolbyAudio();
+		e.internet();
+		e.fullHD();
+	}
+}
