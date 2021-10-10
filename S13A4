@@ -1,0 +1,21 @@
+class Sleep extends Thread {
+	public void run() {
+		System.out.println("Welcome...");
+		for(int i=1; i <= 10; i++) {
+			try {
+			Thread.sleep(400);
+			} catch (InterruptedException e) {
+				System.out.println(e);
+			}
+			System.out.println(i);
+		}
+	}
+}
+public class S13A4 {
+
+	public static void main(String[] args) {
+		Sleep s = new Sleep();
+		s.start();
+	}
+
+}
