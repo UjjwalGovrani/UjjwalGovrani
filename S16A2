@@ -1,0 +1,30 @@
+import java.util.Arrays;
+
+class Employee{
+	public int employeeId;
+	public String employeeName;
+	public int employeeContact;
+	
+	public Employee() {}
+	public Employee(int employeeId, String employeeName, int employeeContact) {
+			super();
+			this.employeeId = employeeId;
+			this.employeeName = employeeName;
+			this.employeeContact = employeeContact;
+			System.out.println("2-arg constructor");
+	}
+	public void m1() {}
+	public void m2() {}
+	public void m3() {}
+}
+public class S16A2 {
+	public static void main(String[] args) {
+		Employee e1 = new Employee();
+		Class c = e1.getClass();
+		System.out.println(c);
+		System.out.println(c.getName());
+		System.out.println(Arrays.toString(c.getConstructors()));
+		System.out.println(Arrays.toString(c.getMethods()));
+		System.out.println(Arrays.toString(c.getFields()));
+	}
+}	
