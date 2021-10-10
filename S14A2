@@ -1,0 +1,39 @@
+class Table {
+	public synchronized void printTable(int num) {
+		for (int i = 1; i<=10; i++) {
+			System.out.println(num + " * "+i+ " = "+(num*1));
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				System.out.println(e);
+			}
+		}
+	}
+}
+class MyTable1 extends Thread {
+	Table t;
+	MyTable1(Table t){
+		this.t = t;
+	}
+	public void run() {
+		t.printTable(5);
+	}
+}
+class MyTable2 extends Thread {
+	Table t;
+	MyTable2(Table t){
+		this.t = t;
+	}
+	public void run() {
+		t.printTable(50);
+	}
+}
+public class S14A2 {
+	public static void main (String [] args) {
+		Table t = new Table();
+		MyTable1 t1 = new MyTable1(t);
+		MyTable2 t2 = new MyTable2(t);
+		t1.start();
+		t2.start();
+	}
+}
