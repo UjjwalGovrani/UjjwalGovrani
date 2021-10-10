@@ -1,0 +1,25 @@
+class GetSet extends Thread {
+	public void run() {
+		System.out.println("Welcome To JS");
+	}
+}
+public class S13A3 {
+
+	public static void main(String[] args) {
+		System.out.println(Thread.currentThread().getName());
+
+		GetSet t1 = new GetSet();
+		t1.start();
+		System.out.println(t1.getName());
+		t1.setName("Khushi");
+		System.out.println(t1.getName());
+		
+		GetSet t2 = new GetSet();
+		t2.start();
+		System.out.println(t2.getName());
+		t2.setName("Manan");
+		System.out.println(t2.getName());
+
+	}
+
+}
