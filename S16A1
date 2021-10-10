@@ -1,0 +1,30 @@
+class Customer implements Cloneable{
+	int customerId;
+	String customerName;
+	int customerContact;
+
+public Customer(int customerId, String customerName, int customerContact) {
+	super();
+	this.customerId = customerId;
+	this.customerName = customerName;
+	this.customerContact = customerContact;
+}
+
+public Object clone()throws CloneNotSupportedException{
+	return super.clone();
+}
+}
+public class S16A1	 {
+public static void main(String[] args) throws CloneNotSupportedException {
+	Customer p1 = new Customer(11,"Ujjwal",1234567890);
+	//Deep Cloning
+	Customer p2 = (Customer)p1.clone();
+	System.out.println(p1.hashCode());
+	System.out.println(p2.hashCode());
+	System.out.println(p1.equals(p2));
+	//Shallow cloning
+	Customer p3 = p1;
+	System.out.println(p3.hashCode());
+	System.out.println(p1.equals(p3));
+}
+}
