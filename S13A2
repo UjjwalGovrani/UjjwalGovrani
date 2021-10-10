@@ -1,0 +1,11 @@
+class ChildThread extends Thread {
+	public void run() {
+		System.out.println("Welcome To JavaScript");
+	}
+}
+public class S13A2 {
+	public static void main(String[] args) {
+		ChildThread c = new ChildThread();
+		c.start();
+	}
+}
