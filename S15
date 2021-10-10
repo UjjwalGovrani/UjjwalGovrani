@@ -1,0 +1,144 @@
+class Customer{
+	public Customer(String string) {
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Customer [customerId=" + customerId + ", customerContact=" + customerContact + ", customerName="
+				+ customerName + "]";
+	}
+	public int getcustomerId() {
+		return customerId;
+	}
+	public void setcustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+	public int getcustomerContact() {
+		return customerContact;
+	}
+	public void setcustomerContact(int customerContact) {
+		this.customerContact = customerContact;
+	}
+	public String getcustomerName() {
+		return customerName;
+	}
+	public void setcustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+	int customerId,customerContact;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + customerContact;
+		result = prime * result + customerId;
+		result = prime * result + ((customerName == null) ? 0 : customerName.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		if (customerContact != other.customerContact)
+			return false;
+		if (customerId != other.customerId)
+			return false;
+		if (customerName == null) {
+			if (other.customerName != null)
+				return false;
+		} else if (!customerName.equals(other.customerName))
+			return false;
+		return true;
+	}
+	String customerName;
+}
+class Address{
+	public Address(String string, String string2, String string3) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((city == null) ? 0 : city.hashCode());
+		result = prime * result + ((country == null) ? 0 : country.hashCode());
+		result = prime * result + ((state == null) ? 0 : state.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Address other = (Address) obj;
+		if (city == null) {
+			if (other.city != null)
+				return false;
+		} else if (!city.equals(other.city))
+			return false;
+		if (country == null) {
+			if (other.country != null)
+				return false;
+		} else if (!country.equals(other.country))
+			return false;
+		if (state == null) {
+			if (other.state != null)
+				return false;
+		} else if (!state.equals(other.state))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Address [city=" + city + ", state=" + state + ", country=" + country + "]";
+	}
+
+	String city,state,country;
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+}
+public class S15A1 {
+
+	public static void main(String[] args) {
+		Customer c1 = new Customer(1+ "Abhi");
+			System.out.println("Customer details :" .hashCode());
+		Address a2=new Address("Jaipur", "Rajasthan", "India");
+		System.out.println(.hashCode());
+
+
+	}
+
+}
