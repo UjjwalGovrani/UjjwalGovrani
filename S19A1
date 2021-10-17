@@ -1,0 +1,25 @@
+import java.util.HashSet;
+import java.util.Vector;
+import java.util.Vector;
+import java.util.Vector;
+import java.util.Vector;
+import java.util.Vector;
+public class S19A1 {
+	public static void main(String[] args) {
+		Vector v = new Vector();
+		for (int i = 1; i <= 5; i++) {
+		v.addElement(i);
+		}
+		for (Object object : v) {
+			System.out.println(object);
+		
+		HashSet hs = new HashSet();
+		hs.add("Java");
+		hs.add("Angular");
+		hs.add("ReactJS");
+		hs.add("JavaScript");
+		hs.add("Python");
+		System.out.println(hs);
+	}
+}
+}
