@@ -1,0 +1,36 @@
+import java.util.Vector;
+import java.util.LinkedList;
+
+	public class S18A2 {
+		public static void main(String[] args) {
+			Vector v = new Vector();
+			for (int i = 1; i <= 5; i++) {
+			v.addElement(i);
+			}
+			System.out.println(v);
+			for (Object object : v) {
+			System.out.println(object);			
+			
+			LinkedList ll = new LinkedList();
+			System.out.println(ll.size());
+			// add the elements to the LinkedList
+			ll.add("Angular");
+			ll.add("ReactJS");
+			ll.add("JavaScript");
+			System.out.println("original content :" + ll);
+			System.out.println(ll.size());
+			ll.addFirst("Java");
+			ll.addLast("Python");
+			System.out.println("After adding first & Last" + ll);
+			// remove elements from LinkedList
+			ll.remove("ReactJS");
+			ll.remove("JavaScript");
+			System.out.println("after deletion content :" + ll);
+			System.out.println(ll.size());
+			// remove first and last elements
+			ll.removeFirst();
+			ll.removeLast();
+			System.out.println("ll after deletion of first and last :" + ll);
+			
+		}
+}}
