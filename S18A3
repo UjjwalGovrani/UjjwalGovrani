@@ -1,0 +1,24 @@
+import java.util.Vector;
+import java.util.Enumeration;
+
+	class S18A3 {
+		public static void main(String[] args) {
+			Vector v = new Vector();
+			v.add("Java");
+			v.add("Angular");
+			v.add("ReactJS");
+			v.add("JavaScript");
+			v.add("Python");
+			for (int i = 1; i <= 5; i++) {
+				v.addElement(i);
+			}
+			System.out.println("Printing the elements using For each ");
+			for (Object object : v) {
+				System.out.println(object);
+			}
+			System.out.println("Printing the elements using Enumaration");
+			Enumeration e = v.elements();
+			while (e.hasMoreElements()) {
+				System.out.println(e.nextElement());
+}
+}}
