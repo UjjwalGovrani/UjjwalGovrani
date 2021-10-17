@@ -1,0 +1,22 @@
+import java.util.LinkedHashSet;
+import java.util.Vector;
+
+
+public class S19A2 {
+	public static void main(String[] args) {
+		Vector v = new Vector();
+		for (int i = 1; i <= 5; i++) {
+		v.addElement(i);
+		}
+		for (Object object : v) {
+			System.out.println(object);
+			
+		LinkedHashSet h = new LinkedHashSet();
+		h.add("Java");
+		h.add("Angular");
+		h.add("ReactJS");
+		h.add("JavaScript");
+		h.add("Python");
+		System.out.println(h);
+	}
+}}
