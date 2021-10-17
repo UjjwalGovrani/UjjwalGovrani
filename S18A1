@@ -1,0 +1,30 @@
+import java.util.Vector;
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+public class S18A1 {
+
+	public static void main(String[] args) {
+		Vector v = new Vector();
+		for (int i = 1; i <= 5; i++) {
+		v.addElement(i);
+		}
+		
+		for (Object object : v) {
+			System.out.println(object);
+		
+		ArrayList a1 = new ArrayList();
+		a1.add("Java");
+		a1.add("Angular");
+		a1.add("ReactJS");
+		a1.add("JavaScript");
+		a1.add("Python");
+		System.out.println("Elements are :");
+		
+		ListIterator itr = a1.listIterator();
+		
+			System.out.println(itr.next());
+		
+		}
+		
+}}
