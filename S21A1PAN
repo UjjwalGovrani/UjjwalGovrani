@@ -1,0 +1,18 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class S21A1PAN {
+
+	public static void main(String[] args) {
+			String input = "ANGPA1234G";
+			String regex = "[A-Z]{5}[1-9]{4}[A-Z]";
+			Pattern p = Pattern.compile(regex);
+			Matcher m = p.matcher(input);
+			
+			if(m.find() && (m.group().equals(input)))
+				System.out.println("Valid PAN");
+			else 
+				System.out.println("Invalid");
+		}
+
+}
