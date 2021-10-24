@@ -1,0 +1,18 @@
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class S21A2a {
+
+	public static void main(String[] args) throws Exception{
+		Path path = Paths.get("D:\\score.txt");
+		if(!Files.exists(path)) {
+		Files.createFile(path);
+		Files.writeString(path, "Your score is 55");
+		System.out.println("Data is written");
+		}else {
+			Files.writeString(path, "Your score is 55");
+			System.out.println("data is appended");	
+			}
+		}
+		}
