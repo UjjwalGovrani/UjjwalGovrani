@@ -1,0 +1,17 @@
+class S22A2d {
+	public void finalize() {
+		//4. The object created inside a method.
+		System.out.println("finalized method called");
+	}
+	public static void greet(){
+		S22A2d t1 = new S22A2d();
+		t1.wish();
+	}
+	public void wish(){
+		System.out.println("welcome");
+	}
+	public static void main(String args[]) {
+		S22A2d.greet();
+		System.gc();
+	}
+}
