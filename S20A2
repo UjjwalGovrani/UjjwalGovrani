@@ -1,0 +1,23 @@
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class S20A2 {
+	public static void main(String[] args){
+		LinkedHashMap<String,String> m = new LinkedHashMap<>();
+		m.put("Course Name" ,"Duration");
+		LinkedHashMap<String,Integer> m1 = new LinkedHashMap<>();
+		m1.put("Java Full Stack" ,150);
+		m1.put("Python Full Stack" ,150);
+		m1.put("UI Full Stack" ,80);
+		
+		System.out.println("Printing key and values using For each loop");
+		for (Object obj : m.entrySet()) {
+			Map.Entry m4 = (Map.Entry) obj;
+			System.out.println(m4.getKey()+ "  "+m4.getValue());
+		}
+		for (Object obj1 : m1.entrySet()) {
+			Map.Entry m5 = (Map.Entry) obj1;
+			System.out.println(m5.getKey()+ "  "+m5.getValue());
+		}
+	}
+}
