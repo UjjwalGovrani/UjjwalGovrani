@@ -1,0 +1,10 @@
+class S22A2c {
+	public void finalize() {
+		//3. By using Anonymous Object.
+		System.out.println("finalized method called");
+	}
+	public static void main(String args[]) {
+		new S22A2c();
+		System.gc();
+	}
+}
