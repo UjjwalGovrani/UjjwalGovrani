@@ -1,0 +1,15 @@
+//Static Nested class or Inner class:
+class Out {
+	static class In {
+		public static void m1() {
+			System.out.println("This is a static nested class");
+		}
+	}
+	}
+	class S22A3d {
+		public static void main(String[] args) {
+			Out.In outIn = new Out.In();
+			outIn.m1();
+			Out.In.m1();
+		}
+}
