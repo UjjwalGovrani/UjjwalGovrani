@@ -1,0 +1,18 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class S21A1Aadhar {
+
+	public static void main(String[] args) {
+			String input = "1111 2222 3333 4444";
+			String regex = "[1]{4}\\s[2]{4}\\s[3]{4}\\s[4]{4}";
+		
+			Pattern p = Pattern.compile(regex);
+			Matcher m = p.matcher(input);
+			
+			if(m.find() && (m.group().equals(input)))
+				System.out.println("Valid Aadhar");
+			else 
+				System.out.println("Invalid");
+	}
+}
