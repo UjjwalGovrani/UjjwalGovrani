@@ -1,0 +1,18 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class S21A1Pincode {
+
+	public static void main(String[] args) {
+			String input = "500055 and 500083";
+			String regex = "[0-9]{6}";
+			
+			Pattern p = Pattern.compile(regex);
+			Matcher m = p.matcher(input);
+			
+			while(m.find())	{
+			System.out.println(m.group());
+	}
+
+}
+}
