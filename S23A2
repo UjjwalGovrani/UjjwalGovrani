@@ -1,0 +1,16 @@
+interface Bike {
+	void type();
+	}
+	class S23A2 {
+		public static void welcome() {
+			System.out.println("KTM DUKE");
+		}
+		public static void main(String[] args) {
+			System.out.println("Model 1");
+			Bike b1 = () -> S23A2.welcome();
+			b1.type();
+			System.out.println("Model 2");
+			Bike b2 = S23A2::welcome;
+			b2.type();
+		}
+}
