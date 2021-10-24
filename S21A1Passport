@@ -1,0 +1,18 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class S21A1Passport {
+
+	public static void main(String[] args) {
+		String input = "A1234567 and L1234123";
+		String regex = "[A-Z][1-9]{7}";
+		
+		Pattern p = Pattern.compile(regex);
+		Matcher m = p.matcher(input);
+		
+		while(m.find()) {
+			System.out.println(m.group());
+		}
+	}
+
+}
