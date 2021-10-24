@@ -1,0 +1,33 @@
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
+class S24A3 extends Thread {
+	static ConcurrentHashMap<Integer,String> m = new ConcurrentHashMap<>();
+	public void run()
+	{
+		try {
+			Thread.sleep(800);
+		}
+		catch (InterruptedException e) {
+			System.out.println("Child Thread going to add element");
+		}
+		System.out.println("Programming Languages");
+		m.put(104,"Angular");
+	}
+	public static void main(String[] args)throws InterruptedException
+	{
+		m.put(101,"Python");
+		m.put(102,"Java");
+		m.put(103,"ReactJS");
+		S24A3 t = new S24A3();
+		t.start();
+		Set<Integer> s = m.keySet();
+		Iterator<Integer> itr = s.iterator();
+		while(itr.hasNext()) {
+			Integer i = itr.next();
+			System.out.println("Programming:"+i+"..."+m.get(i));
+					Thread.sleep(1000);
+		}
+		System.out.println(m);
+	}
+}
