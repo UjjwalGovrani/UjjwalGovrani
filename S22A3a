@@ -1,0 +1,18 @@
+//Normal Inner class or Regular Inner class:
+class University {
+	class Department {
+		public void departmentInfo() {
+			System.out.println("IT Department");
+		}
+	}
+	void departmentCheck(int departmentNO) {
+		Department d = new Department();
+		d.departmentInfo();
+	}
+}
+	public class S22A3a {
+		public static void main(String args[]) {
+			University u = new University();
+			u.departmentCheck(101);
+}
+}
