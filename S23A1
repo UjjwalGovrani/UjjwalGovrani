@@ -1,0 +1,24 @@
+interface Car{
+	void greet();
+	}
+	class MyCar implements Car{
+		public void greet() {
+			System.out.println("Audi");
+		}
+	}
+	public class S23A1 {
+		public static void main(String[] args) {
+			Car car1 = new MyCar();
+			car1.greet();
+			Car car2 = new Car() {
+				public void greet() {
+					System.out.println("BMW");
+				}
+			};
+			car2.greet();
+			Car car3 = () -> {
+				System.out.println("Lamborghini");
+			};
+			car3.greet();
+		}
+}
