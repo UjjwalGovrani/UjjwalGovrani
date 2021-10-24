@@ -1,0 +1,11 @@
+class S22A2a {
+	//1. Nullifying the reference variable.
+	public void finalize() {
+		System.out.println("finalized method called");
+	}
+	public static void main(String args[]) {
+		S22A2a t1 = new S22A2a();
+		t1 = null;
+		System.gc();
+	}
+}
