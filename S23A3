@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.function.Consumer;
+
+public class S23A3 {
+	public static void main(String[] args) {
+		ArrayList<String> a1 = new ArrayList<String>();
+		a1.add("Mathematics");
+		a1.add("History");
+		a1.add("Civics");
+		a1.add("Multimedia");
+		a1.add("Geography");
+		System.out.println("Using for-each loop");
+		for (String s : a1) {
+			System.out.println(s);
+		}
+		System.out.println("Using forEach() method 1");
+		Consumer<String> con1 = new Consumer<>() {
+			public void accept(String s) {
+				System.out.println(s);
+			}
+		};
+		a1.forEach(con1);
+		System.out.println("Using forEach() method 2");
+		Consumer<String> con2 = s -> System.out.println(s);
+		a1.forEach(con2);
+		System.out.println("Using forEach() method 3");
+		a1.forEach(s -> System.out.println(s));
+		System.out.println("Using forEach() with Methed Reference");
+		a1.forEach(System.out::println);
+	}
+}
