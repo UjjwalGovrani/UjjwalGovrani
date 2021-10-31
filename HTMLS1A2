@@ -1,0 +1,79 @@
+<html>
+    <body bgcolor="aqua">
+    <center>
+      <table border="2">
+        <h1><font color="green"><center>
+          COLLEGE TIME TABLE
+          </center></font></h1>
+       <tr>
+          <td align="center">
+          <td>8:30-9:30
+          <td>9:30-10:30
+          <td>10:30-11:30
+          <td>11:30-12:30
+          <td>12:30-2:00
+          <td>2:00-3:00
+          <td>3:00-4:00
+          <td>4:00-5:00
+        </tr>
+        <tr>
+            <td align="center">MONDAY</td>
+            <td align="center">---</td>
+            <td align="center"><font color="blue">SUB1</td></font>
+            <td align="center"><font color="pink">SUB2</td>
+            <td align="center"><font color="red">SUB3</td>
+            <td rowspan="6" align="center">L<br>U<br>N<br>C<br>H</td>
+            <td align="center"><font color="maroon">SUB4</td>
+            <td align="center"><font color="orange">SUB5</td>
+            <td align="center">counselling class</td>
+        </tr>
+        <tr>
+            <td align="center">TUESDAY</td>
+            <td align="center"><font color="blue">SUB1</td>
+            <td align="center"><font color="red">SUB2</td>
+            <td align="center"><font color="pink">SUB3</td>
+            <td align="center">---</td>
+            <td align="center"><font color="orange">SUB4</td>
+            <td align="center"><font color="maroon">SUB5</td>
+            <td align="center">library</td>
+        </tr>
+        <tr>
+            <td align="center">WEDNESDAY</td>
+            <td align="center"><font color="pink">SUB1</td>
+            <td align="center"><font color="orange">SUB2</td>
+            <td align="center"><font color="maroon">SWA</td>
+            <td align="center">---</td>
+          <td colspan="3" align="center"><font color="green">lab</font></td>
+        </tr>
+        <tr>
+            <td align="center">THRUSDAY</td>
+            <td align="center">SUB1</td>
+            <td align="center"><font color="maroon">SUB2</td>
+            <td align="center"><font color="orange">SUB3</td>
+            <td align="center">---</td>
+            <td align="center"><font color="blue">SUB4</td>
+            <td align="center"><font color="red">SUB5</td>
+            <td align="center">library</td>
+        </tr>
+        <tr>
+            <td align="center">FRIDAY</td>
+            <td align="center"><font color="orange">SUB1</td>
+            <td align="center"><font color="maroon">SUB2</td>
+            <td align="center"><font color="blue">SUB3</td>
+            <td align="center">---</td>
+            <td align="center"><font color="pink">SUB4</td>
+            <td align="center"><font color="maroon">SUB5</td>
+            <td align="center">library</td>
+        </tr>
+        <tr>
+            <td align="center">SATURDAY</td>
+            <td align="center"><font color="red">SUB1</td>
+            <td colspan="3" align="center">seminar</td>
+            <td align="center"><font color="pink">SUB4</td>
+            <td align="center"><font color="maroon">SUB5</td>
+            <td align="center">library</td>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>
