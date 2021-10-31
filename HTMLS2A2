@@ -1,0 +1,12 @@
+<html>
+  <body>
+    <h1>Audio Gallery</h1>
+    <audio controls loop autoplay>
+      <source src="track1.mp3" type="audio/mpeg" />
+    </audio>
+    <h1>Video Gallery</h1>
+    <video controls autoplay width="200" height="200">
+      <source src="movie1.mp4" type="Video/mp4" />
+    </video>
+  </body>
+</html>
