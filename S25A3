@@ -1,0 +1,34 @@
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReentrantLock;
+
+class MyThread extends Thread {
+	static ReentrantLock l = new ReentrantLock();
+	MyThread(String name) {
+		super(name);
+	}
+	public void run() {
+		do {
+			try {
+				if (l.tryLock(2, TimeUnit.SECONDS)) {
+					System.out.println(Thread.currentThread().getName() + " got Lock");
+					Thread.sleep(10000);
+					l.unlock();
+					System.out.println(Thread.currentThread().getName() + " released Lock");
+					break;
+				} else {
+					System.out.println(Thread.currentThread().getName() + " unable to get lock and try again");
+				}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		} while (true);
+	}
+	}
+	class S25A3 {
+		public static void main(String args[]) {
+			MyThread t1 = new MyThread("thread-1");
+			MyThread t2 = new MyThread("thread-2");
+			t1.start();
+			t2.start();
+		}
+}
