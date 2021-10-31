@@ -1,0 +1,32 @@
+import java.util.Iterator;
+import java.util.concurrent.ConcurrentSkipListSet;
+
+class S25A2 extends Thread {
+	static ConcurrentSkipListSet<String> al = new ConcurrentSkipListSet<>();
+	public void run()
+	{	
+		try {
+			Thread.sleep(1000);
+		}
+		catch (InterruptedException e) {
+			System.out.println("Child Thread going to add element");
+		}
+		System.out.println("Programming Languages");
+		al.add("Angular");
+	}
+	public static void main(String[] args)throws InterruptedException
+	{
+		al.add("Python");
+		al.add("Java");
+		al.add("ReactJS");
+		S25A2 t = new S25A2();
+		t.start();
+		Iterator<String> itr = al.iterator();
+		while (itr.hasNext()) {
+			String s = itr.next();
+			System.out.println("Main thread iterating list and current object: "+s);
+				Thread.sleep(800);
+			}
+		System.out.println(al);
+		}
+	}
