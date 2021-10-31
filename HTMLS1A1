@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <ol>
+      <li>LAPTOPS</li>
+      <li>MOBILES</li>
+      <li>HARD DISKS</li>
+      <li>TABLETS</li>
+    </ol>
+    <ul>
+      <li>LAPTOPS</li>
+      <li>MOBILES</li>
+      <li>HARD DISKS</li>
+      <li>TABLETS</li>
+    </ul>
+  </body>
+</html>
