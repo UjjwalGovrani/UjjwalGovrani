@@ -1,0 +1,71 @@
+<html>  
+<head>  
+<style>  
+body{  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+}  
+input[type=text], textarea {  
+  width: 100%;  
+  padding: 15px;  
+  margin: 5px 0 22px 0;  
+  display: inline-block;  
+  border: none;  
+  background: #ffffff;  
+}  
+ div {  
+            padding: 10px 0;  
+         }  
+hr {  
+  border: 1px solid #f1f1f1;  
+  margin-bottom: 25px;  
+}  
+.registerbtn {  
+  background-color: #4CAF50;  
+  color: white;  
+  padding: 16px 20px;  
+  margin: 8px 0;  
+  border: none;  
+  cursor: pointer;  
+  width: 100%;  
+  opacity: 0.9;  
+}  
+.registerbtn:hover {  
+  opacity: 1;  
+}  
+</style>  
+</head>  
+<body>  
+<form>  
+  <div>  
+  <center>  <h1> Open Account</h1> 
+  <p>Fill out details to register with us</p> </center>
+  <hr>  
+  <label> Firstname </label>   
+<input type="text" name="firstname" placeholder= "Firstname" size="15"/>   
+<label> Lastname: </label>    
+<input type="text" name="lastname" placeholder="Lastname" size="15"/>   
+<div>  
+    <label>Email</label>
+    <input type="email" placeholder="Email" size="30"/><br /><br>
+    <label>Mobile</label>
+    <input type="number" placeholder="Mobile" size="30" /><br /><br>
+    <label>Gender:</label>
+    <input type="radio" name="sex" value="Male" size="10" />Male
+    <input type="radio" name="sex" value="Female" size="10" />Female<br /><br>
+    Present Address: 
+    <textarea cols="20" rows="5" value="present address" placeholder="Lastname">
+    </textarea><br><br>
+    Permanent Address: 
+    <textarea cols="20" rows="5" value="Permanent address" placeholder="Lastname">
+    </textarea><br><br>
+      <label>PAN</label>
+    <input type="text"/ placeholder="Lastname"><br /><br>
+    <label>Address Proof</label>
+    <input type="file"/><br /><br>
+    <label>Id Proof</label>
+    <input type="file"/><br /><br>
+    <button type="submit" class="registerbtn">Register</button>    
+</form>  
+</body>  
+</html>  
