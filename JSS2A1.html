@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function add() {
+        var numOne, numTwo, sum;
+        numOne = parseInt(document.getElementById("first").value);
+        numTwo = parseInt(document.getElementById("second").value);
+        sum = numOne + numTwo;
+        document.getElementById("answer").value = sum;
+      }
+      function sub() {
+        var numOne, numTwo, sub;
+        numOne = parseInt(document.getElementById("first").value);
+        numTwo = parseInt(document.getElementById("second").value);
+        sub = numOne - numTwo;
+        document.getElementById("answer").value = sub;
+      }
+      function mul() {
+        var numOne, numTwo, mul;
+        numOne = parseInt(document.getElementById("first").value);
+        numTwo = parseInt(document.getElementById("second").value);
+        mul = numOne * numTwo;
+        document.getElementById("answer").value = mul;
+      }
+      function div() {
+        var numOne, numTwo, div;
+        numOne = parseInt(document.getElementById("first").value);
+        numTwo = parseInt(document.getElementById("second").value);
+        div = numOne / numTwo;
+        document.getElementById("answer").value = div;
+      }
+      function mod() {
+        var numOne, numTwo, mod;
+        numOne = parseInt(document.getElementById("first").value);
+        numTwo = parseInt(document.getElementById("second").value);
+        mod = numOne % numTwo;
+        document.getElementById("answer").value = mod;
+      }
+      function cls() {
+        var numOne, numTwo, cls;
+        numOne = parseInt(document.getElementById("first").value);
+        numTwo = parseInt(document.getElementById("second").value);
+        cls = " ";
+        document.getElementById("answer").value = cls;
+      }
+    </script>
+  </head>
+  <body>
+    <p>Enter the First Number: <input id="first" /></p>
+    <p>Enter the Second Number: <input id="second" /></p>
+    <button onclick="add()">ADD</button>
+    <button onclick="sub()">SUB</button>
+    <button onclick="mul()">MUL</button>
+    <button onclick="div()">DIV</button>
+    <button onclick="mod()">MOD</button>
+    <button onclick="cls()">Clear</button>
+
+    <p>Get Result: <input id="answer" /></p>
+  </body>
+</html>
