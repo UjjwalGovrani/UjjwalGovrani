@@ -1,0 +1,22 @@
+CREATE DATABASE sampleDB;
+USE sampleDB;
+CREATE TABLE `sampledb`.`product` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NULL,
+  `price` INT NULL,
+  PRIMARY KEY (`id`));	
+
+INSERT INTO `sampledb`.`product` (`id`, `name`, `price`) VALUES ('101', 'Pen', '50');
+INSERT INTO `sampledb`.`product` (`id`, `name`, `price`) VALUES ('102', 'Key board', '500');
+INSERT INTO `sampledb`.`product` (`id`, `name`, `price`) VALUES ('103', 'Mouse', '500');
+INSERT INTO `sampledb`.`product` (`id`, `name`, `price`) VALUES ('104', 'Pen Drive', '400');
+INSERT INTO `sampledb`.`product` (`id`, `name`, `price`) VALUES ('105', 'USB Cable', '200');
+
+
+UPDATE product SET price='100' where id=101;
+UPDATE product SET price='500' where id=103;
+SELECT *FROM product;
+
+DELETE FROM product where id=104;
+DELETE FROM product where id=105;
+SELECT *FROM product;
