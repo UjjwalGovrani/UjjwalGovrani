@@ -1,0 +1,30 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+@WebServlet("/s3")
+public class Servlet3 extends HttpServlet {
+private static final long serialVersionUID = 1L;
+ 
+public void doPost(HttpServletRequest req, HttpServletResponse res) throws
+ServletException, IOException {
+res.setContentType("text/html");
+String First name = req.getParameter("firstname");
+String Last name = req.getParameter("lastname");
+String skill 1 = req.getParameter("skill1");
+String skill 2 = req.getParameter("skill2");
+String qualification = req.getParameter("qualification");
+String university = req.getParameter("university");
+PrintWriter out = res.getWriter();
+out.println("<h1>Details Summary:</h1><hr>");
+out.println("<br>First Name: "+firstname);
+out.println("<br>Last Name: "+lastname);
+out.println("<br>Skill-1: "+skill1);
+out.println("<br>Skill-2: "+skill2);
+out.println("<br>Qualification: "+qualification);
+out.println("<br>University: "+university);
+}
+}
