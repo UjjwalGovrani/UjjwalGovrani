@@ -1,0 +1,42 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import com.abc.app1.model.Employee;
+import com.abc.app1.utils.DBConnectionFactory;
+public class EmployeeDAO {
+public Employee getEmployee(int eid) {
+Employee employee = null;
+String sql = "SELECT * FROM employee WHERE eid = ?";
+Connection con = DBConnectionFactory.getConnection();
+PreparedStatement ps = null;
+ResultSet rs = null;
+try {
+ps = con.prepareStatement(sql);
+ps.setInt(1, eid);
+rs = ps.executeQuery();
+if(rs.next()) {
+employee = new Employee();
+employee.setEid(rs.getInt(1));
+employee.setEname(rs.getString(2));
+employee.setEsal(rs.getInt(3));
+System.out.println(employee);
+}else {
+System.out.println("No data found");
+}
+} catch (SQLException e1) {
+e1.printStackTrace();
+}
+finally {
+try {
+rs.close();
+ps.close();
+con.close();
+} catch (SQLException e) {
+// TODO Auto-generated catch block
+e.printStackTrace();
+}
+}
+return employee;
+}
+}
