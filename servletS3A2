@@ -1,0 +1,36 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import com.seshu.dao.EmployeeDAO;
+import com.model.Employee;
+@WebServlet("/getEmployee")
+public class GetEmployeeServlet extends HttpServlet {
+@Override
+public void doGet(HttpServletRequest req, HttpServletResponse resp) throws
+ServletException, IOException {
+resp.setContentType("text/html");
+Employee employee = null;
+int eid = Integer.parseInt(req.getParameter("eid"));
+PrintWriter out = resp.getWriter();
+EmployeeDAO employeeDAO = new EmployeeDAO();
+employee = employeeDAO.getEmployee(eid);
+if(employee != null) {
+out.print("<h2>Employee Registration Form</h2>");
+out.print("<p>Employee Id: "+employee.getEid()+"</p>");
+out.print("<p>Employee Name: "+employee.getEname()+"</p>");
+out.print("<p>Employee Gender:"+employee.getEgen()+"</p>");
+out.print("<p>Employee Role:"+employee.getErole()+"</p>");
+out.print("<p>Employee Location:"+employee.getElctn()+"</p>");
+out.print("<a href='index.html'>HOME</a>");
+}else {
+out.print("<h2>Employee Details</h2>");
+out.print("<h3 style='color:red'>No data found with id "+eid+"</h3>");
+out.print("<a href='index.html'>HOME</a>");
+}
+out.close();
+}
+}
