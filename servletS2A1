@@ -1,0 +1,49 @@
+<html>
+<body>
+<form action="process" method="post">
+<table>
+<tr>
+<td>Name:</td>
+<td><input type="text" name="name"></td>
+</tr>
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="gen" value="Male">Male
+<input type="radio" name="gen" value="Female">Female
+</td>
+</tr>
+<tr>
+<td><input type = "submit" value="Submit"></td>
+<td><input type = "reset" value="Clear"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+@WebServlet("/process")
+public class FormProcessServlet extends HttpServlet {
+public void doPost(HttpServletRequest request, HttpServletResponse response) throws
+ServletException, IOException {
+response.setContentType("text/html");
+PrintWriter out = response.getWriter();
+String name = request.getParameter("name");
+String gender = request.getParameter("gen");
+out.println("<table border='2'>");
+out.println("<tr><th>Name:</th><td>"+name+"</td></tr>");
+out.println("<tr><th>Gener:</th><td>"+gender+"</td></tr>");
+out.println("</table>");
+out.close();
+}
+}
