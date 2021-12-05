@@ -1,0 +1,116 @@
+CREATE TABLE JSPS2A2
+(
+fname varchar(20),
+lname varchar(20),
+skill1 varchar(20),
+skill2 varchar(10),
+city varchar(20),
+qualification varchar(20),
+university varchar(20),
+);
+
+
+index.jsp
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+<h1>Personal Details:</h1>
+<hr>
+<form action="contactDetails.jsp">
+<div>
+<label>First Name:</label>
+<input type="text" name="fname">
+</div>
+<div>
+<label>Last Name:</label>
+<input type="text" name="lname">
+</div>
+<input type="submit" value="Next">
+</form>
+</body>
+</html>
+
+
+contactDetails.jsp
+<%
+String fname = request.getParameter("fname");
+String lname = request.getParameter("lname");
+session.setAttribute("fname", fname);
+session.setAttribute("lname", lname);
+%>
+<h1>SKills Details:</h1>
+<hr>
+<form action="addressDetails.jsp">
+<div>
+<label>Skill-1: </label>
+<input type="text" name="skill1">
+</div>
+<div>
+<label>SKill-2: </label>
+<input type="text" name="skill2">
+</div>
+<input type="submit" value="Next">
+</form>
+
+
+addresDetails.jsp
+<%
+String Skill-1 = request.getParameter("skill1");
+String SKill-2 = request.getParameter("skill2");
+session.setAttribute("SKill-1", skill1);
+session.setAttribute("SKill-2", skill2);
+%>
+<h1>Education Details:</h1>
+<hr>
+<form action="process.jsp">
+<div>
+<label>Qualification: </label>
+<input type="text" name="qualification">
+</div>
+<div>
+<label>University: </label>
+<input type="text" name="university">
+</div>
+<input type="submit" value="Submit">
+</form>
+
+
+process.jsp
+<%@page import="java.sql.*" %>
+<%
+String fname = (String)session.getAttribute("fname");
+String lname = (String)session.getAttribute("lname");
+String skill1 = (String)session.getAttribute("skill1");
+String skill2 = (String)session.getAttribute("skill2");
+String qualification = request.getParameter("qualification");
+String education = request.getParameter("education");
+String driver = "com.mysql.cj.jdbc.Driver";
+String url = "jdbc:mysql://localhost:3306/JSPS2A2";
+String user = "root";
+String password = "######";
+String sql = "INSERT INTO 
+user_details(fname,lname,skill1,skill2,qualification,education
+) values(?,?,?,?,?,?,?)";
+Class.forName(driver);
+Connection con = DriverManager.getConnection(url,user,password);
+PreparedStatement ps = con.prepareStatement(sql);
+ps.setString(1,fname);
+ps.setString(2, lname);
+ps.setString(3, skill1);
+ps.setString(4, skill2);
+ps.setString(5, qualification);
+ps.setString(6, education);
+int result = ps.executeUpdate();
+if(result == 1){
+out.println("User Creation Successful");
+out.println("<a href='index.jsp'>Home Page</a>");
+}else{
+out.println("Failed");
+out.println("<a href='index.jsp'>Home Page</a>");
+}
+%>
