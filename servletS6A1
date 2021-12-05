@@ -1,0 +1,165 @@
+<web-app>
+ <servlet>
+ <servlet-name></servlet-name>
+ <servlet-class></servlet-class>
+ <init-param>
+ <param-name>driver</param-name>
+ <param-value>mysql-driver</param-value>
+ </init-param>
+ <init-param>
+ <param-name>url</param-name>
+ <param-value>mysql-url</param-value>
+ </init-param>
+ <init-param>
+ <param-name>userid</param-name>
+ <param-value>mysql-userid</param-value>
+ </init-param>
+ <init-param>
+ <param-name>password</param-name>
+ <param-value>mysql-password</param-value>
+ </init-param>
+</servlet>
+<servlet-mapping>
+</servlet-mapping>
+</web-app>
+
+
+
+CREATE DATABASE servlet6;
+Use servlet6;
+DROP TABLE employee;
+CREATE TABLE employee
+(
+eid INT,
+ename varchar(20),
+esal INT
+);
+INSERT INTO employee VALUES(1001,'Kamesh',50000);
+INSERT INTO employee VALUES(1002,'Naresh',55000);
+INSERT INTO employee VALUES(1003,'Ramesh',44000);
+INSERT INTO employee VALUES(1004,'Rupesh',56000);
+INSERT INTO employee VALUES(1005,'Lokesh',59000);
+commit;
+SELECT * FROM employee;
+
+
+index.html
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>index.html</title>
+</head>
+<body>
+<form action="employeeDetails" method="post">
+<div>
+<label>Employee Id:</label>
+<input type="text" name="eid">
+</div>
+<input type="submit" value="Get Employee Details">
+</form>
+</body>
+</html>
+
+
+EmployeeServlet.java
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+//@WebServlet("/employee")
+public class EmployeeServlet extends HttpServlet {
+private static final long serialVersionUID = 1L;
+String sql = "select * from employee where eid=?";
+Connection con = null;
+PreparedStatement ps = null;
+public void init(ServletConfig config) throws ServletException {
+System.out.println("init()");
+String driver = config.getInitParameter("driver");
+String url = config.getInitParameter("url");
+String userId = config.getInitParameter("userid");
+String password = config.getInitParameter("password");
+try {
+Class.forName(driver);
+con = DriverManager.getConnection(url,userId,password);
+ps = con.prepareStatement(sql);
+} catch (Exception e) {
+System.out.println(e);
+}
+}
+public void doPost(HttpServletRequest req, HttpServletResponse res) throws
+ServletException, IOException {
+res.setContentType("text/html");
+PrintWriter out = res.getWriter();
+int eid = Integer.parseInt(req.getParameter("eid"));
+try {
+ps.setInt(1, eid);
+ResultSet rs = ps.executeQuery();
+if(rs.next()) {
+out.println("<h3>Employee Details</h3><hr>");
+out.println("Employee Id: "+rs.getInt(1));
+out.println("<br>Employee Name: "+rs.getString(2));
+out.println("<br>Employee Salary: "+rs.getInt(3));
+}else {
+out.println("No data found with id "+eid);
+}
+} catch (SQLException e) {
+System.out.println(e);
+}
+}
+public void destroy() {
+System.out.println("destroy()");
+try {
+if(ps != null) {
+ps.close();
+}
+if(con != null) {
+con.close();
+}
+} catch (Exception e) {
+System.out.println(e);
+}
+}
+}
+
+
+web.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+<servlet>
+<servlet-name>employee</servlet-name>
+<servlet-class>com.abc.app1.EmployeeServlet</servlet-class>
+<init-param>
+<param-name>driver</param-name>
+<param-value>com.mysql.cj.jdbc.Driver</param-value>
+</init-param>
+<init-param>
+<param-name>url</param-name>
+<param-value>jdbc:mysql://localhost:3306/servlet6</param-value>
+</init-param>
+<init-param>
+<param-name>userid</param-name>
+<param-value>root</param-value>
+</init-param>
+<init-param>
+<param-name>password</param-name>
+<param-value>########</param-value>
+</init-param>
+<load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>employee</servlet-name>
+<url-pattern>/employeeDetails</url-pattern>
+</servlet-mapping>
+</web-app>
